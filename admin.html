@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel</title>
+
+  <link rel="stylesheet" href="assets/admin.css">
+  <script type="module" src="assets/admin.js"></script>
+</head>
+
+<body class="admin">
+  <aside class="sidebar">
+    <div class="logo">⚙️ Admin</div>
+    <nav class="menu">
+      <a href="#" class="tab active" data-tab="settings">Site Ayarları</a>
+      <a href="#" class="tab" data-tab="timeline">Biz Nasıl Tanıştık</a>
+      <a href="#" class="tab" data-tab="memories">Anı Kutusu</a>
+      <a href="#" class="tab" data-tab="letter">Mektup</a>
+      <a href="#" class="tab" data-tab="photos">Fotoğraflar (URL)</a>
+      <a href="index.html" class="tab">💖 Siteye Git</a>
+      <a href="#" id="logoutBtn" class="tab">🚪 Çıkış</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="top">
+      <h1 id="tabTitle">Site Ayarları</h1>
+      <div class="muted" id="authState">—</div>
+    </header>
+
+    <section class="panel active" id="tab-settings">
+      <div class="card">
+        <h2>Genel</h2>
+
+        <div class="grid2">
+          <div class="field">
+            <label>Senin adın</label>
+            <input id="yourNameIn" placeholder="Ali">
+          </div>
+          <div class="field">
+            <label>Sevgilinin adı</label>
+            <input id="loverNameIn" placeholder="Betül">
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label>İlişki başlangıç tarihi</label>
+            <input id="startDateIn" type="date">
+          </div>
+          <div class="field">
+            <label>Sonraki özel tarih</label>
+            <input id="specialDateIn" type="datetime-local">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Hero yazısı</label>
+          <input id="heroTextIn" placeholder="Bu site, yeniden yaşamak için...">
+        </div>
+
+        <div class="field">
+          <label>Alıntı (quote)</label>
+          <input id="quoteTextIn" placeholder="Aşk bazen...">
+        </div>
+
+        <div class="field">
+          <label>Özel tarih alt notu</label>
+          <input id="specialHintIn" placeholder="Admin panelinden değiştir">
+        </div>
+
+        <hr>
+
+        <h2>Spotify</h2>
+        <div class="field">
+          <label>Spotify Embed URL</label>
+          <input id="ourSongIn" placeholder="https://open.spotify.com/embed/track/...">
+        </div>
+        <div class="field">
+          <label>Şarkı notu</label>
+          <input id="ourSongNoteIn" placeholder="Bu şarkı ikimizi anlatıyor...">
+        </div>
+
+        <div class="actions">
+          <button class="btn" id="saveSettingsBtn">Kaydet</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="tab-timeline">
+      <div class="card">
+        <div class="row">
+          <h2>Zaman Çizelgesi</h2>
+          <button class="btn" id="addTimelineBtn">+ Olay</button>
+        </div>
+        <div id="timelineList" class="list"></div>
+      </div>
+    </section>
+
+    <section class="panel" id="tab-memories">
+      <div class="card">
+        <div class="row">
+          <h2>Anılar</h2>
+          <button class="btn" id="addMemoryBtn">+ Anı</button>
+        </div>
+        <div id="memoriesList" class="list"></div>
+      </div>
+    </section>
+
+    <section class="panel" id="tab-letter">
+      <div class="card">
+        <h2>Mektup</h2>
+        <p class="muted">Yazdıkların siteye aynen basılır.</p>
+        <textarea id="letterIn" rows="10" style="width:100%"></textarea>
+        <div class="actions">
+          <button class="btn" id="saveLetterBtn">Kaydet</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="tab-photos">
+      <div class="card">
+        <div class="row">
+          <h2>Fotoğraflar (URL ile)</h2>
+          <button class="btn" id="addPhotoBtn">+ Foto Ekle</button>
+        </div>
+
+        <div class="grid2">
+          <div>
+            <div class="field">
+              <label>Foto URL</label>
+              <input id="photoUrlIn" placeholder="https://...jpg / png">
+            </div>
+            <div class="field">
+              <label>Başlık (opsiyonel)</label>
+              <input id="photoTitleIn" placeholder="Örn: İlk gün">
+            </div>
+
+            <div class="actions">
+              <button class="btn ghost" id="clearPhotoForm">Temizle</button>
+              <button class="btn" id="savePhotoUrl">Kaydet</button>
+            </div>
+          </div>
+
+          <div>
+            <div id="savedPhotos" class="photos"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
