@@ -523,4 +523,40 @@ body.love .hero{
   body.love .nav-links{ gap: 20px; padding: 10px 18px; }
   body.love .logo-pill{ min-width: 180px; }
   body.love .hero{ padding-top: 140px; }
+
+}/* Mobil düzeltme paketi */
+* { box-sizing: border-box; }
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Nav/linkler taşmasın */
+.nav-inner, .nav, .container {
+  max-width: 100%;
+}
+
+/* Küçük ekranlarda menüyü satıra yay */
+@media (max-width: 768px) {
+  .nav-inner {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Genel: büyük paddingleri azalt */
+  .section, .card, .box, .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
